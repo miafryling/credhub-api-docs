@@ -16,6 +16,7 @@ includes:
   - regenerate
   - delete
   - find
+  - certificates
   - permissions
   - get-permission
   - add-permission
