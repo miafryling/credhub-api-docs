@@ -383,7 +383,7 @@ This request returns a credential by name. The example provided shows the reques
 Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
 name | none | yes | string | Name of credential to retrieve
-current | false | no | string | Return only latest credential version
+current | false | no | string | Returns latest credential version and transitional version, if one exists
 versions | none | no | integer | Return latest N credential versions
 
 ## Type: RSA
