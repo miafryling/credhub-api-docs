@@ -18,8 +18,9 @@ includes:
   - find
   - certificates
   - permissions
-  - get-permission
   - add-permission
+  - get-permission
+  - update-permission
   - delete-permission
   - interpolate
   - encryption-rotation
