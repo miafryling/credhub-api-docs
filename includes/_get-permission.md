@@ -9,7 +9,7 @@
 > cURL
 
 ```shell
-curl "https://example.com/api/v1/permissions?credential_name=/example-password" \
+curl "https://example.com/api/v2/permissions/example-permission-uuid" \
   -X GET \
   -H "authorization: bearer [token]" \
   -H 'content-type: application/json'
@@ -17,30 +17,24 @@ curl "https://example.com/api/v1/permissions?credential_name=/example-password" 
 
 ```json
 {
-  "credential_name": "/example-password",
-  "permissions": [
-    {
-      "actor": "uaa-user:106f52e2-5d01-4675-8d7a-c05ff9a2c081",
-      "operations": [
-        "read",
-        "write",
-        "delete",
-        "read_acl",
-        "write_acl"
-      ]
-    }
-  ]
-}
+   "path":"/example-credential-namespace",
+   "operations":[
+      "read",
+      "write"
+   ],
+   "actor":"uaa-user:f6b2f8f6-1654-4a5d-aba4-c4d024a43560",
+   "uuid":"example-permission-uuid"
+} 
 ```
 
-This request returns the permissions of a credential. 
+This request returns the permissions of a path given the permission UUID. 
 
 ### HTTP Request
 
-`GET: https://example.com/api/v1/permissions`
+`GET: https://example.com/api/v2/permissions`
 
 ### Query Parameters
 
 Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
-credential_name | none | yes | string | Name of credential whose permissions will be returned
+uuid | none | yes | string | UUID of permission, that was returned when permission was created.

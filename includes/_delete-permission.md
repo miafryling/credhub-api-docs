@@ -9,28 +9,32 @@
 > cURL
 
 ```shell
-curl "https://example.com/api/v1/permissions?credential_name=/example-password&actor=uaa-user:f6b2f8f6-1654-4a5d-aba4-c4d024a43560" \
+curl "https://example.com/api/v2/permissions/example-permission-uuid" \
   -X DELETE \
   -H "authorization: bearer [token]" \
   -H 'content-type: application/json'
 ```
 
 ```json
-[Status 204 Empty]
+{
+  "uuid": "example-permission-uuid",
+  "path": "/example-specific-credential",
+  "actor": "uaa-user:106f52e2-5d01-4675-8d7a-c05ff9a2c081",
+  "operations": ["read","write"]
+}
 ```
 
-This request deletes a permission for an actor on a credential.
+This request deletes a permission.
 
 ### HTTP Request
 
-`DELETE: https://example.com/api/v1/permissions`
+`DELETE: https://example.com/api/v2/permissions/example-permission-uuid`
 
 ### Query Parameters
 
 Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
-credential_name | none | yes | string | Name of credential whose permissions will be deleted
-actor | none | yes | identity<sup>1</sup> | Name of actor whose permissions will be deleted
+uuid | none | yes | string | The UUID of the permission that was returned when permission was created.
 
 <sup>1</sup> Authentication-specific identities [explained here.](https://github.com/cloudfoundry-incubator/credhub/blob/master/docs/authentication-identities.md)
 

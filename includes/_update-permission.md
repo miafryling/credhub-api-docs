@@ -9,11 +9,11 @@
 > cURL
 
 ```shell
-curl "https://example.com/api/v2/permissions" \
-  -X POST \
+curl "https://example.com/api/v2/permissions/example-permission-uuid" \
+  -X PUT \
   -d '
   {
-    "path": "/example-directory/*",
+    "path": "/example-directory/example-credential",
     "actor": "uaa-user:106f52e2-5d01-4675-8d7a-c05ff9a2c081"
     "operations": ["read", "write"]
   }' \
@@ -23,20 +23,18 @@ curl "https://example.com/api/v2/permissions" \
 
 ```json
 {
-  "uuid": "example-uuid",
-  "path": "/example-directory/*",
+  "uuid": "example-permission-uuid",
+  "path": "/example-directory/example-credential",
   "actor": "uaa-user:106f52e2-5d01-4675-8d7a-c05ff9a2c081",
   "operations": ["read","write"]
 }
 ```
 
 ```shell
-curl "https://example.com/api/v2/permissions" \
-  -X POST \
+curl "https://example.com/api/v2/permissions/example-permission-uuid" \
+  -X PATCH \
   -d '
   {
-    "path": "/example-directory/example-specific-credential",
-    "actor": "uaa-user:106f52e2-5d01-4675-8d7a-c05ff9a2c081"
     "operations": ["read", "write"]
   }' \
   -H "authorization: bearer [token]" \
@@ -45,14 +43,14 @@ curl "https://example.com/api/v2/permissions" \
 
 ```json
 {
-  "uuid": "other-uuid",
-  "path": "/example-directory/example-specific-credential",
+  "uuid": "example-permission-uuid",
+  "path": "/example-directory/example-credential",
   "actor": "uaa-user:106f52e2-5d01-4675-8d7a-c05ff9a2c081",
   "operations": ["read","write"]
 }
 ```
 
-This request adds permissions for a path for an actor. You can add permission for a specific credential on a path, as well as all items under a path by using the `*` syntax. 
+This request updates the operations for a permission keeping the same path and actor. It replaces the operations that were set before with the new operations that are provided in the request.
 
 ### HTTP Request
 
@@ -62,9 +60,10 @@ This request adds permissions for a path for an actor. You can add permission fo
 
 Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
-path      | none | yes | string | A path where you would like to add a permission to for an actor
-actor | none | yes | string | An actor that receives permission at the specified path
-operations | none | yes | array of strings | List of operations given to actor for specified path
+uuid      | none | yes | string | The permission uuid that was returned when a permission was created
+path      | none | yes | string | The path of the permission you would like to update the operations for
+actor | none | yes | string | The actor that you would like to update the operations for
+operations | none | yes | array of strings | The new list of operations you would like to update this permission for
 
 <sup>1</sup> Authentication-specific identities [explained here.](https://github.com/cloudfoundry-incubator/credhub/blob/master/docs/authentication-identities.md) <br>
 <sup>2</sup> Supported operations: read, write, delete, read_acl, write_acl
