@@ -104,53 +104,6 @@ Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
 path | none | true | string | Path of credentials to return
 
-## Show All Paths
-
-> CredHub CLI
-
-```shell
-user$ credhub find --all-paths
-paths: 
-- path: /
-- path: /director-name/
-- path: /director-name/deploy1/
-- path: /director-name/deploy2/
-- path: /director2/
-```
-
-> cURL
-
-```shell
-curl "https://example.com/api/v1/data?paths=true" \
-  -X GET \
-  -H "authorization: bearer [token]" \
-  -H 'content-type: application/json'
-```
-
-```json
-{
-  "paths": [
-    {
-      "path": "/"
-    },
-    {
-      "path": "/director-name/"
-    },
-    {
-      "path": "/director-name/deploy1/"
-    },
-    {
-      "path": "/director-name/deploy2/"
-    },
-    {
-      "path": "/director2/"
-    }
-  ]
-}
-```
-
-This request retrieves a list of all paths which contain credentials.
-
 ### HTTP Request
 
 `GET: https://example.com/api/v1/data`
