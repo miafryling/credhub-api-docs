@@ -27,7 +27,7 @@ This request displays the server version.
 
 ### HTTP Request
 
-`GET: https://example.com/version'
+`GET: https://example.com/version`
 
 ### Request Parameters
 
