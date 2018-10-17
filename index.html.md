@@ -26,8 +26,6 @@ includes:
   - encryption-rotation
   - errors
   - integrations
-  - test
-
 
 search: true
 ---
