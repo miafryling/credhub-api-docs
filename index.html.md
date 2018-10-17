@@ -26,6 +26,7 @@ includes:
   - encryption-rotation
   - errors
   - integrations
+  - test
 
 
 search: true
@@ -49,11 +50,10 @@ Credential responses include a unique identifier in the key 'id'. This ID is a u
 
 ## Overwriting Credential Values
 
-By default, credential set and generate actions with the API will not overwrite an existing value. If you wish to only create values that do not exist, you can perform generate requests on all of the credentials and it leave existing values in place. This mode is the default, but can be specified as `"mode" : "no-overwrite"`.
+In the latest 2.0.x, set requests always overwrite the credential that already exists. In the latest 2.0.x, generate requests can be set to overwrite, no-overwrite, or converge for the mode parameter.
 
-If you wish to overwrite existing values, you can set 'mode' as 'overwrite' or 'converge'.  When `"mode" : "converge"` is set, a new value will be generated only if the generation parameters have changed.  When `"mode" : "overwrite"` is set, a new credential is generated in every case.
+The default mode is converge as of 2.0.0. Converge will only overwrite if the generate request parameters do not match the existing credential.  
 
-In versions prior to 1.6, `mode` is not available. Instead `overwrite` is indicated as a boolean value. If you wish to overwrite existing values, you should then include the `"overwrite": true` parameter in your request.
 # Authentication
 
 All requests to CredHub, with the exception of `/info` and `/health` must include an authentication method. CredHub supports two authentication provider types, [UAA][1] and [mutual TLS][2].
@@ -83,8 +83,7 @@ curl "https://example.com/info" \
     "url": "https://uaa.example.com:8443"
   },
   "app": {
-    "name": "CredHub",
-    "version": "1.2.0"
+    "name": "CredHub"
   }
 }
 ```
