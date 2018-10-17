@@ -27,6 +27,7 @@ includes:
   - errors
   - integrations
   - version
+  - health
 
 search: true
 ---
