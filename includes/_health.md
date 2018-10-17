@@ -19,7 +19,7 @@ curl "https://example.com/health" \
 }
 ```
 
-This request verifies that communication with the server via the API is still possible.
+This request verifies that communication with the server via the API is possible.
 
 ### HTTP Request
 
