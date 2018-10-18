@@ -15,7 +15,7 @@ curl "https://example.com/health" \
 
 ```json
 {
-  "status": "up"
+  "status": "UP"
 }
 ```
 

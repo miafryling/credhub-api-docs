@@ -7,8 +7,8 @@
 ```shell
 user$ credhub set --type value --name '/example-value' --password 'sample'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: value
 name: /example-value
+type: value
 value: sample
 version_created_at: 2017-01-01T04:07:18Z
 ```
@@ -29,11 +29,11 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "value",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
   "name": "/example-value",
-  "type": "value",
-  "value": "sample",
-  "version_created_at": "2017-01-01T04:07:18Z"
+  "value": "sample"
 }
 ```
 
@@ -58,8 +58,8 @@ value | none | yes | string | Value of credential to set
 ```shell
 user$ credhub set --type json --name '/example-json' --value '{ "key": 123, "key_list": ["val1","val2"], "is_true": true }'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: json
 name: /example-json
+type: json
 value:
   key: 123
   key_list:
@@ -92,9 +92,10 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "json",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
   "name": "/example-json",
-  "type": "json",
   "value": {
     "key": 123,
     "key_list": [
@@ -102,8 +103,7 @@ curl "https://example.com/api/v1/data" \
       "val2"
     ],
     "is_true": true
-  },
-  "version_created_at": "2017-01-01T04:07:18Z"
+  }
 }
 ```
 
@@ -129,8 +129,8 @@ value | none | yes | object | Value of credential to set
 ```shell
 user$ credhub set --type password --name '/example-password' --password '3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: password
 name: /example-password
+type: password
 value: 3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R
 version_created_at: 2017-01-01T04:07:18Z
 ```
@@ -151,11 +151,11 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "password",
+  "version_created_at": "2017-01-05T01:01:01Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
   "name": "/example-password",
-  "type": "password",
-  "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL",
-  "version_created_at": "2017-01-05T01:01:01Z"
+  "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL"
 }
 ```
 
@@ -180,8 +180,8 @@ value | none | yes | string | Value of credential to set
 ```shell
 user$ credhub set --type user --name '/example-user' --username 'FQnwWoxgSrDuqDLmeLpU' --password '6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: user
 name: /example-user
+type: user
 value:
   username: FQnwWoxgSrDuqDLmeLpU
   password: 6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL
@@ -208,15 +208,15 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "user",
+  "version_created_at": "2017-01-05T01:01:01Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
   "name": "/example-user",
-  "type": "user",
   "value": {
     "username": "FQnwWoxgSrDuqDLmeLpU",
     "password": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL",
     "password_hash": "$6$uu8ybZiNiPRu$6AYClxVqMXA3LAIdDAnEuWLUlWGlm0RRJI2wdHd8R9hKkKtiYupyKBjdRBI1ZhsyHwYetCpySew9ZXXLf.Mih0"
-  },
-  "version_created_at": "2017-01-05T01:01:01Z"
+  }
 }
 ```
 
@@ -243,8 +243,8 @@ value.password | none | yes | string | Password value of credential to set
 ```shell
 user$ credhub set --type certificate --name '/example-certificate' --root ./root.pem --certificate ./cert.pem --private ./private.pem
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: certificate
 name: /example-certificate
+type: certificate
 value:
   root: |
     -----BEGIN CERTIFICATE-----
@@ -281,15 +281,15 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "certificate",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad676",
   "name": "/example-certificate",
-  "type": "certificate",
   "value": {
     "ca": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
     "certificate": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
     "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
-  },
-  "version_created_at": "2017-01-01T04:07:18Z"
+  }
 }
 ```
 
@@ -321,8 +321,8 @@ value.private_key | null | no<sup>1</sup> | string | Private key value of creden
 ```shell
 user$ credhub set --type rsa --name '/example-rsa' --public ./public.pem --private ./private.pem
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: rsa
 name: /example-rsa
+type: rsa
 value:
   public_key: |
     -----BEGIN PUBLIC KEY-----
@@ -354,14 +354,14 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "rsa",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad676",
   "name": "/example-rsa",
-  "type": "rsa",
   "value": {
     "public_key": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----",
     "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
-  },
-  "version_created_at": "2017-01-01T04:07:18Z"
+  }
 }
 ```
 
@@ -390,8 +390,8 @@ value.private_key | null | no<sup>1</sup> | string | Private key value of creden
 ```shell
 user$ credhub set --type ssh --name '/example-ssh' --public ./public.pem --private ./private.pem
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: ssh
 name: /example-ssh
+type: ssh
 value:
   public_key: ssh-rsa AAAAB3NzaC1y...W9RWFM1
   private_key: |
@@ -420,14 +420,14 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "ssh",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad676",
   "name": "/example-ssh",
-  "type": "ssh",
   "value": {
     "public_key": "ssh-rsa AAAAB3NzaC1y...W9RWFM1",
     "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
-  },
-  "version_created_at": "2017-01-01T04:07:18Z"
+  }
 }
 ```
 
@@ -457,8 +457,8 @@ value.private_key | null | no<sup>1</sup> | string | Private key value of creden
 ```shell
 user$ credhub import --file import.yml
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: ssh
 name: /example-ssh
+type: ssh
 value:
   public_key: ssh-rsa AAAAB3NzaC1y...W9RWFM1
   private_key: |
@@ -468,14 +468,14 @@ value:
 version_created_at: 2017-01-01T04:07:18Z
 
 id: 2ba73fbd-439e-40ef-b005-0e1db8815063
-type: password
 name: /example-password
+type: password
 value: SqFcE2c0AuRvet2YhrxdFbPtkBmjiq
 version_created_at: 2017-01-01T04:07:28Z
 
 id: 22a1e87b-ba0b-4bc9-bb26-4e5fc5fb1b2f
-type: value
 name: /example-value
+type: value
 value: sample
 version_created_at: 2017-01-01T04:07:38Z
 

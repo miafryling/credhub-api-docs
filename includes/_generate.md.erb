@@ -7,8 +7,8 @@
 ```shell
 user$ credhub generate --type password --name '/example-password'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: password
 name: /example-password
+type: password
 value: 3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R
 version_created_at: 2017-01-01T04:07:18Z
 ```
@@ -31,11 +31,11 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "password",
+  "version_created_at": "2017-01-05T01:01:01Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
   "name": "/example-password",
-  "type": "password",
-  "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL",
-  "version_created_at": "2017-01-05T01:01:01Z"
+  "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL"
 }
 ```
 
@@ -68,8 +68,8 @@ parameters.include_special | false | no | boolean | Include special characters f
 ```shell
 user$ credhub generate --type user --name '/example-user'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: user
 name: /example-user
+type: user
 value:
   username: FQnwWoxgSrDuqDLmeLpU
   password: 6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL
@@ -95,14 +95,14 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "user",
+  "version_created_at": "2017-01-05T01:01:01Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
   "name": "/example-user",
-  "type": "user",
   "value": {
     "username": "FQnwWoxgSrDuqDLmeLpU",
     "password": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL"
-  },
-  "version_created_at": "2017-01-05T01:01:01Z"
+  }
 }
 ```
 
@@ -138,8 +138,8 @@ parameters.include_special | false | no | boolean | Include special characters f
 ```shell
 user$ credhub generate --type certificate --name '/example-certificate' --common-name 'example.com' --ca '/example-ca'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: certificate
 name: /example-certificate
+type: certificate
 value:
   root: |
     -----BEGIN CERTIFICATE-----
@@ -175,15 +175,15 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "certificate",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad676",
   "name": "/example-certificate",
-  "type": "certificate",
   "value": {
     "ca": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
     "certificate": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
     "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
-  },
-  "version_created_at": "2017-01-01T04:07:18Z"
+  }
 }
 ```
 
@@ -234,8 +234,8 @@ parameters.self_sign | false | no<sup>6</sup> | boolean | Whether to self-sign g
 ```shell
 user$ credhub generate --type rsa --name '/example-rsa'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: rsa
 name: /example-rsa
+type: rsa
 value:
   public_key: |
     -----BEGIN PUBLIC KEY-----
@@ -266,14 +266,14 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "rsa",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad677",
   "name": "/example-rsa",
-  "type": "rsa",
   "value": {
     "public_key": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----",
     "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
-  },
-  "version_created_at": "2017-01-01T04:07:18Z"
+  }
 }
 ```
 
@@ -303,8 +303,8 @@ parameters.key_length | 2048 | no | enum<sup>2</sup> | Key length of generated c
 ```shell
 user$ credhub generate --type ssh --name '/example-ssh'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: ssh
 name: /example-ssh
+type: ssh
 value:
   public_key: ssh-rsa AAAAB3NzaC1y...W9RWFM1
   private_key: |
@@ -332,14 +332,14 @@ curl "https://example.com/api/v1/data" \
 
 ```json
 {
+  "type": "ssh",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad677",
   "name": "/example-ssh",
-  "type": "ssh",
   "value": {
     "public_key": "ssh-rsa AAAAB3NzaC1y...W9RWFM1",
     "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
-  },
-  "version_created_at": "2017-01-01T04:07:18Z"
+  }
 }
 ```
 

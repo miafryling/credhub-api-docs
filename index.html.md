@@ -24,10 +24,10 @@ includes:
   - delete-permission
   - interpolate
   - encryption-rotation
-  - errors
-  - integrations
   - version
   - health
+  - errors
+  - integrations
 
 search: true
 ---
@@ -46,7 +46,7 @@ Paths can be used to namespace a set of credential names for a different deploym
 
 ## Credential IDs
 
-Credential responses include a unique identifier in the key 'id'. This ID is a unique identifier for a specific credential version. When a credential value is updated, a new ID will be returned. This identifier can be is useful in applications where a specific credential value should be pinned until a manual action (such as a deployment) is performed. If your application should receive the latest value of the credential, retrieving by name is preferred.
+Credential responses include a unique identifier in the key 'id'. This ID is a unique identifier for a specific credential version. When a credential value is updated, a new ID will be returned. This identifier can be useful in applications where a specific credential value should be pinned until a manual action (such as a deployment) is performed. If your application should receive the latest value of the credential, retrieving by name is preferred.
 
 ## Overwriting Credential Values
 
@@ -56,7 +56,7 @@ In the latest 2.0.x, generate requests can be set to overwrite, no-overwrite, or
 
 # Authentication
 
-All requests to CredHub, with the exception of `/info` and `/health` must include an authentication method. CredHub supports two authentication provider types, [UAA][1] and [mutual TLS][2].
+All requests to CredHub, with the exception of `/info` and `/health`, must include an authentication method. CredHub supports two authentication provider types, [UAA][1] and [mutual TLS][2].
 
 [1]:https://github.com/cloudfoundry/uaa
 [2]:https://github.com/cloudfoundry-incubator/credhub/blob/master/docs/mutual-tls.md

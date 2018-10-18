@@ -64,8 +64,8 @@ curl "https://example.com/api/v1/certificates" \
 {
   "certificates": [
     {
-      "id": "2993f622-cb1e-4e00-a267-4b23c273bf3d",
-      "name": "/example-certificate"
+      "name": "/example-certificate",
+      "id": "2993f622-cb1e-4e00-a267-4b23c273bf3d"
     }
   ]
 }
@@ -99,8 +99,8 @@ curl "https://example.com/api/v1/certificates?name=/example-certificate" \
 {
   "certificates": [
     {
-      "id": "2993f622-cb1e-4e00-a267-4b23c273bf3d",
-      "name": "/example-certificate"
+      "name": "/example-certificate",
+      "id": "2993f622-cb1e-4e00-a267-4b23c273bf3d"
     }
   ]
 }

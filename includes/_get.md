@@ -7,8 +7,8 @@
 ```shell
 user$ credhub get --id 2993f622-cb1e-4e00-a267-4b23c273bf3d
 id: 2993f622-cb1e-4e00-a267-4b23c273bf3d
-type: password
 name: /example-password
+type: password
 value: 6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL
 version_created_at: 2017-01-05T01:01:01Z
 ```
@@ -24,11 +24,11 @@ curl "https://example.com/api/v1/data/2993f622-cb1e-4e00-a267-4b23c273bf3d" \
 
 ```json
 {
+  "type": "password",
+  "version_created_at": "2017-01-05T01:01:01Z",
   "id": "2993f622-cb1e-4e00-a267-4b23c273bf3d",
   "name": "/example-password",
-  "type": "password",
-  "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL",
-  "version_created_at": "2017-01-05T01:01:01Z"
+  "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL"
 }
 ```
 
@@ -51,8 +51,8 @@ none | | | |
 ```shell
 user$ credhub get --name '/example-password'
 id: 2993f622-cb1e-4e00-a267-4b23c273bf3d
-type: password
 name: /example-password
+type: password
 value: 6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL
 version_created_at: 2017-01-05T01:01:01Z
 ```
@@ -70,18 +70,18 @@ curl "https://example.com/api/v1/data?name=/example-password" \
 {
   "data": [
     {
+      "type": "password",
+      "version_created_at": "2017-01-05T01:01:01Z",
       "id": "2993f622-cb1e-4e00-a267-4b23c273bf3d",
       "name": "/example-password",
-      "type": "password",
-      "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL",
-      "version_created_at": "2017-01-05T01:01:01Z"
+      "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL"
     },
     {
+      "type": "password",
+      "version_created_at": "2017-01-01T04:07:18Z",
       "id": "67fc3def-bbfb-4953-83f8-4ab0682ad674",
       "name": "/example-password",
-      "type": "password",
-      "value": "3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R",
-      "version_created_at": "2017-01-01T04:07:18Z"
+      "value": "3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R"
     }
   ]
 }
@@ -108,8 +108,8 @@ versions | none | no | integer | Return latest N credential versions
 ```shell
 user$ credhub get --name '/example-value'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: value
 name: /example-value
+type: value
 value: sample
 version_created_at: 2017-01-01T04:07:18Z
 ```
@@ -127,11 +127,11 @@ curl "https://example.com/api/v1/data?name=/example-value" \
 {
   "data": [
     {
+      "type": "value",
+      "version_created_at": "2017-01-01T04:07:18Z",
       "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
       "name": "/example-value",
-      "type": "value",
-      "value": "sample",
-      "version_created_at": "2017-01-01T04:07:18Z"
+      "value": "sample"
     }
   ]
 }
@@ -158,8 +158,8 @@ versions | none | no | integer | Return latest N credential versions
 ```shell
 user$ credhub get --name '/example-json'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: json
 name: /example-json
+type: json
 value:
   key: 123
   key_list:
@@ -182,9 +182,10 @@ curl "https://example.com/api/v1/data?name=/example-json" \
 {
   "data": [
     {
+      "type": "json",
+      "version_created_at": "2017-01-01T04:07:18Z",
       "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
       "name": "/example-json",
-      "type": "json",
       "value": {
         "key": 123,
         "key_list": [
@@ -192,8 +193,7 @@ curl "https://example.com/api/v1/data?name=/example-json" \
           "val2"
         ],
         "is_true": true
-      },
-      "version_created_at": "2017-01-01T04:07:18Z"
+      }
     }
   ]
 }
@@ -220,8 +220,8 @@ versions | none | no | integer | Return latest N credential versions
 ```shell
 user$ credhub get --name '/example-password'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: password
 name: /example-password
+type: password
 value: 3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R
 version_created_at: 2017-01-01T04:07:18Z
 ```
@@ -239,11 +239,11 @@ curl "https://example.com/api/v1/data?name=/example-password" \
 {
   "data": [
     {
+      "type": "password",
+      "version_created_at": "2017-01-05T01:01:01Z",
       "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
       "name": "/example-password",
-      "type": "password",
-      "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL",
-      "version_created_at": "2017-01-05T01:01:01Z"
+      "value": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL"
     }
   ]
 }
@@ -270,8 +270,8 @@ versions | none | no | integer | Return latest N credential versions
 ```shell
 user$ credhub get --name '/example-user'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: user
 name: /example-user
+type: user
 value:
   username: FQnwWoxgSrDuqDLmeLpU
   password: 6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL
@@ -292,15 +292,15 @@ curl "https://example.com/api/v1/data?name=/example-user" \
 {
   "data": [
     {
+      "type": "user",
+      "version_created_at": "2017-01-05T01:01:01Z",
       "id": "67fc3def-bbfb-4953-83f8-4ab0682ad675",
       "name": "/example-user",
-      "type": "user",
       "value": {
         "username": "FQnwWoxgSrDuqDLmeLpU",
         "password": "6mRPZB3bAfb8lRpacnXsHfDhlPqFcjH2h9YDvLpL",
         "password_hash": "$6$uu8ybZiNiPRu$6AYClxVqMXA3LAIdDAnEuWLUlWGlm0RRJI2wdHd8R9hKkKtiYupyKBjdRBI1ZhsyHwYetCpySew9ZXXLf.Mih0"
-      },
-      "version_created_at": "2017-01-05T01:01:01Z"
+      }
     }
   ]
 }
@@ -327,8 +327,8 @@ versions | none | no | integer | Return latest N credential versions
 ```shell
 user$ credhub get --name '/example-certificate'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: certificate
 name: /example-certificate
+type: certificate
 value:
   root: |
     -----BEGIN CERTIFICATE-----
@@ -358,15 +358,15 @@ curl "https://example.com/api/v1/data?name=/example-certificate" \
 {
   "data": [
     {
+      "type": "certificate",
+      "version_created_at": "2017-01-01T04:07:18Z",
       "id": "67fc3def-bbfb-4953-83f8-4ab0682ad676",
       "name": "/example-certificate",
-      "type": "certificate",
       "value": {
         "ca": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
         "certificate": "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----",
         "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
-      },
-      "version_created_at": "2017-01-01T04:07:18Z"
+      }
     }
   ]
 }
@@ -393,8 +393,8 @@ versions | none | no | integer | Return latest N credential versions
 ```shell
 user$ credhub get --name '/example-rsa'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: rsa
 name: /example-rsa
+type: rsa
 value:
   public_key: |
     -----BEGIN PUBLIC KEY-----
@@ -420,14 +420,14 @@ curl "https://example.com/api/v1/data?name=/example-rsa" \
 {
   "data": [
     {
+      "type": "rsa",
+      "version_created_at": "2017-01-01T04:07:18Z",
       "id": "67fc3def-bbfb-4953-83f8-4ab0682ad677",
       "name": "/example-rsa",
-      "type": "rsa",
       "value": {
         "public_key": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----",
         "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
-      },
-      "version_created_at": "2017-01-01T04:07:18Z"
+      }
     }
   ]
 }
@@ -454,8 +454,8 @@ versions | none | no | integer | Return latest N credential versions
 ```shell
 user$ credhub get --name '/example-ssh'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: ssh
 name: /example-ssh
+type: ssh
 value:
   public_key: ssh-rsa AAAAB3Nz...
   private_key: |
@@ -478,15 +478,15 @@ curl "https://example.com/api/v1/data?name=/example-ssh" \
 {
   "data": [
     {
+      "type": "ssh",
+      "version_created_at": "2017-01-01T04:07:18Z",
       "id": "67fc3def-bbfb-4953-83f8-4ab0682ad678",
       "name": "/example-ssh",
-      "type": "ssh",
       "value": {
         "public_key": "ssh-rsa AAAAB3Nz...",
         "private_key": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----",
         "public_key_fingerprint": "EvI0/GIUgDjcoCzUQM+EtwnVTryNsKRd6TrHAGKJJSI"
-      },
-      "version_created_at": "2017-01-01T04:07:18Z"
+      }
     }
   ]
 }
@@ -536,7 +536,7 @@ credentials:
 
 This CLI command gets multiple credentials and exports them to either standard out, or a file. The output will be in yaml format, with the key `credentials` whose value is a list of credential objects. Each credential will contain a name, type and value. An example is shown to the right. This file is compatible with the bulk import process.
 
-Use `--file` to specify a file to write the export to. Use `--path` to specify a path, that will restrict the credentials exported to those with a prefix matching the given path.
+Use `--file` to specify a file to write the export to. Use `--path` to specify a path, which will restrict the credentials exported to those with a prefix matching the given path.
 
 
 

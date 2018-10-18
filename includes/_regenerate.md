@@ -9,8 +9,8 @@ The regenerate endpoints generate new values for credentials using the same para
 ```shell
 user$ credhub regenerate --name '/example-password'
 id: 67fc3def-bbfb-4953-83f8-4ab0682ad675
-type: password
 name: /example-password
+type: password
 value: 3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R
 version_created_at: 2017-01-01T04:07:18Z
 ```
@@ -29,11 +29,11 @@ curl "https://example.com/api/v1/regenerate" \
 
 ```json
 {
+  "type": "password",
+  "version_created_at": "2017-01-01T04:07:18Z",
   "id": "67fc3def-bbfb-4953-83f8-4ab0682ad674",
   "name": "/example-password",
-  "type": "password",
-  "value": "3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R",
-  "version_created_at": "2017-01-01T04:07:18Z"
+  "value": "3t6Y2OFP0jQIcLnki1h7p3NtSfDx4l9bamr1ja6R"
 }
 ```
 
