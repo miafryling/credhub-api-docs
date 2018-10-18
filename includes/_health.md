@@ -29,4 +29,4 @@ This request verifies that communication with the server via the API is possible
 
 Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
-none
+none | | | |
