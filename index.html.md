@@ -22,6 +22,7 @@ includes:
   - delete-permission
   - interpolate
   - encryption-rotation
+  - version
   - health
   - errors
   - integrations
