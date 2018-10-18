@@ -33,4 +33,4 @@ This request displays the server version.
 
 Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
-none
+none | | | |
