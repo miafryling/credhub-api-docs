@@ -48,6 +48,7 @@ This request retrieves a list of stored credential names which contain the searc
 Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
 name-like | none | true | string | Search term to match against stored credential names
+expires-within-days | none | false | integer | Return credentials which expire within the given number of days
 
 ## Find by Path
 
@@ -103,4 +104,5 @@ This request retrieves a list of stored credential names which are within the sp
 Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
 path | none | true | string | Path of credentials to return
+expires-within-days | none | false | integer | Return credentials which expire within the given number of days
 
