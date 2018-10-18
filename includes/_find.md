@@ -104,12 +104,3 @@ Parameter | Default | Required | Type | Description
 --------- | --------- | --------- | --------- | -----------
 path | none | true | string | Path of credentials to return
 
-### HTTP Request
-
-`GET: https://example.com/api/v1/data`
-
-### Query Parameters
-
-Parameter | Default | Required | Type | Description
---------- | --------- | --------- | --------- | -----------
-paths | none | true | boolean | Will return list of all paths if true
