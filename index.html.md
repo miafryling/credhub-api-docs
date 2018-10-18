@@ -50,9 +50,9 @@ Credential responses include a unique identifier in the key 'id'. This ID is a u
 
 ## Overwriting Credential Values
 
-In the latest 2.0.x, set requests always overwrite the credential that already exists. 
+As of 2.0.0, set requests always overwrite the credential that already exists. 
 
-In the latest 2.0.x, generate requests can be set to overwrite, no-overwrite, or converge for the mode parameter. The default mode for generate is converge as of 2.0.0. Converge will only overwrite if the generate request parameters do not match the existing credential.  
+As of 2.0.1, generate requests can be set to overwrite, no-overwrite, or converge for the mode parameter. The default mode for generate is converge as of 2.0.0. Converge will only overwrite if the generate request parameters do not match the existing credential.  
 
 # Authentication
 

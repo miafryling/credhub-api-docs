@@ -4,8 +4,8 @@
 
 ```shell
 user$ credhub --version
-CLI Version: 2.0.1
-Server Version: 2.0.2
+CLI Version: 2.1.0
+Server Version: 2.1.0
 ```
 
 > cURL
@@ -19,7 +19,7 @@ curl "https://example.com/version" \
 
 ```json
 {
-  "version": "2.0.2"
+  "version": "2.1.0"
 }
 ```
 
