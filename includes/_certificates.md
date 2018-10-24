@@ -106,7 +106,8 @@ curl "https://example.com/api/v1/certificates?name=/example-certificate" \
 }
 ```
 
-This request retrieves a certificate by name. Exactly one value will be returned.
+This request retrieves a certificate by name. Exactly one value will be returned. 
+The id returned by the request represents the certificate version id. To get the id of the credential use `api/v1/data`
 
 ### HTTP Request
 
