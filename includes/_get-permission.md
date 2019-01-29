@@ -1,64 +1,40 @@
 # Get Permissions
 
-> CredHub
-CLI
+> CredHub CLI
 
-``` shell
+```shell
 [not supported]
 ```
 
 > cURL
 
-``` bash
-$ curl 'http://localhost:8080/api/v2/permissions?path=/some-path&actor=some-actor' -i -X GET \
-    -H 'Content-Type: application/json'
+```shell
+curl "https://example.com/api/v2/permissions/example-permission-uuid" \
+  -X GET \
+  -H "authorization: bearer [token]" \
+  -H 'content-type: application/json'
 ```
 
-    {
-      "path" : "/some-path",
-      "operations" : [ ],
-      "actor" : "some-actor",
-      "uuid" : "48faba92-5492-3e23-b262-75e30a7ddb6a"
-    }
-
-This request returns the permissions of a path given the permission
-UUID.
-
-## HTTP Request
-
-``` http
-GET /api/v2/permissions?path=/some-path&actor=some-actor HTTP/1.1
-Content-Type: application/json
-Host: localhost:8080
-```
-
-## Request Parameters
-
-| Parameter | Description          |
-| --------- | -------------------- |
-| `path`    | The credential path  |
-| `actor`   | The credential actor |
-
-## HTTP Response
-
-``` http
-HTTP/1.1 200 OK
-Content-Type: application/json;charset=UTF-8
-Content-Length: 125
-
+```json
 {
-  "path" : "/some-path",
-  "operations" : [ ],
-  "actor" : "some-actor",
-  "uuid" : "48faba92-5492-3e23-b262-75e30a7ddb6a"
-}
+   "path":"/example-credential-namespace",
+   "operations":[
+      "read",
+      "write"
+   ],
+   "actor":"uaa-user:f6b2f8f6-1654-4a5d-aba4-c4d024a43560",
+   "uuid":"example-permission-uuid"
+} 
 ```
 
-## Response Fields
+This request returns the permissions of a path given the permission UUID. 
 
-| Path         | Type     | Description                                                                                                                            |
-| ------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `path`       | `String` | The path that represents the credential                                                                                                |
-| `operations` | `Array`  | The operations that are permitted to be done with the credential. Available operations are: read, write, delete, read\_acl, write\_acl |
-| `actor`      | `String` | The username that can interact with the credential                                                                                     |
-| `uuid`       | `String` | The unique identifier that represents the credential                                                                                   |
+### HTTP Request
+
+`GET: https://example.com/api/v2/permissions`
+
+### Query Parameters
+
+Parameter | Default | Required | Type | Description
+--------- | --------- | --------- | --------- | -----------
+uuid | none | yes | string | UUID of permission, that was returned when permission was created.
