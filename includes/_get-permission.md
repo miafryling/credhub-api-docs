@@ -15,7 +15,7 @@ $ curl 'http://localhost:8080/api/v2/permissions?path=/some-path&actor=some-acto
 ```
 
     {
-      "path" : "some-path",
+      "path" : "/some-path",
       "operations" : [ ],
       "actor" : "some-actor",
       "uuid" : "48faba92-5492-3e23-b262-75e30a7ddb6a"
@@ -39,11 +39,6 @@ Host: localhost:8080
 | `path`    | The credential path  |
 | `actor`   | The credential actor |
 
-## Request Body
-
-``` 
-```
-
 ## HTTP Response
 
 ``` http
@@ -52,7 +47,7 @@ Content-Type: application/json;charset=UTF-8
 Content-Length: 125
 
 {
-  "path" : "some-path",
+  "path" : "/some-path",
   "operations" : [ ],
   "actor" : "some-actor",
   "uuid" : "48faba92-5492-3e23-b262-75e30a7ddb6a"
