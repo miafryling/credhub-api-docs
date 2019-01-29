@@ -10,7 +10,7 @@ CLI
 > cURL
 
 ``` bash
-$ curl 'http://localhost:8080/api/v2/permissions?path=%2Fsome-path&actor=some-actor' -i -X GET \
+$ curl 'http://localhost:8080/api/v2/permissions?path=/some-path&actor=some-actor' -i -X GET \
     -H 'Content-Type: application/json'
 ```
 
@@ -27,7 +27,7 @@ UUID.
 ## HTTP Request
 
 ``` http
-GET /api/v2/permissions?path=%2Fsome-path&actor=some-actor HTTP/1.1
+GET /api/v2/permissions?path=/some-path&actor=some-actor HTTP/1.1
 Content-Type: application/json
 Host: localhost:8080
 ```
