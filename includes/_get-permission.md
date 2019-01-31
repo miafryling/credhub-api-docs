@@ -9,12 +9,13 @@ CLI
 
 > cURL
 
-``` bash
-$ curl 'http://localhost:8080/api/v2/permissions?path=some-path&actor=some-actor' -i -X GET \
+``` shell
+curl 'http://localhost:8080/api/v2/permissions?path=some-path&actor=some-actor' \
+    -i -X GET \
     -H 'Content-Type: application/json'
 ```
 
-``` bash
+``` json
 {
   "path" : "some-path",
   "operations" : [ ],
@@ -26,7 +27,7 @@ $ curl 'http://localhost:8080/api/v2/permissions?path=some-path&actor=some-actor
 This request returns the permissions of a path given the permission
 UUID.
 
-## HTTP Request
+**HTTP Request.**
 
 `GET: /api/v2/permissions?path=some-path&actor=some-actor`
 
