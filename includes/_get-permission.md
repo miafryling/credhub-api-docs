@@ -27,11 +27,11 @@ curl 'http://localhost:8080/api/v2/permissions?path=some-path&actor=some-actor' 
 This request returns the permissions of a path given the permission
 UUID.
 
-**HTTP Request.**
+### HTTP Request
 
 `GET: /api/v2/permissions?path=some-path&actor=some-actor`
 
-## Request Parameters
+### Request Parameters
 
 | Parameter | Default | Required | Type   | Description          |
 | --------- | ------- | -------- | ------ | -------------------- |
