@@ -28,11 +28,7 @@ UUID.
 
 ## HTTP Request
 
-``` http
-GET /api/v2/permissions?path=some-path&actor=some-actor HTTP/1.1
-Content-Type: application/json
-Host: localhost:8080
-```
+`GET: /api/v2/permissions?path=some-path&actor=some-actor`
 
 ## Request Parameters
 
