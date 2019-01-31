@@ -1,5 +1,7 @@
 # Get Permissions
 
+## Get by path and actor
+
 > CredHub
 CLI
 
@@ -24,8 +26,7 @@ curl 'http://localhost:8080/api/v2/permissions?path=some-path&actor=some-actor' 
 }
 ```
 
-This request returns the permissions of a path given the permission
-UUID.
+This request retrieves a permission by path and actor.
 
 ### HTTP Request
 
