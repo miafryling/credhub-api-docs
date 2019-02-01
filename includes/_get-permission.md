@@ -12,7 +12,7 @@ CLI
 > cURL
 
 ``` shell
-curl 'http://localhost:8080/api/v2/permissions/48faba92-5492-3e23-b262-75e30a7ddb6a' \
+curl 'http://localhost:8080/api/v2/permissions/abcd1234-ab12-ab12-ab12-abcdef123456' \
     -i -X GET \
     -H 'Content-Type: application/json'
 ```
@@ -22,7 +22,7 @@ curl 'http://localhost:8080/api/v2/permissions/48faba92-5492-3e23-b262-75e30a7dd
   "path" : "some-path",
   "operations" : [ ],
   "actor" : "some-actor",
-  "uuid" : "48faba92-5492-3e23-b262-75e30a7ddb6a"
+  "uuid" : "abcd1234-ab12-ab12-ab12-abcdef123456"
 }
 ```
 
@@ -30,7 +30,7 @@ This request retrieves a permission given the UUID.
 
 ### HTTP Request
 
-`GET: /api/v2/permissions/48faba92-5492-3e23-b262-75e30a7ddb6a`
+`GET: /api/v2/permissions/abcd1234-ab12-ab12-ab12-abcdef123456`
 
 ### Request Parameters
 
@@ -59,7 +59,7 @@ curl 'http://localhost:8080/api/v2/permissions?path=some-path&actor=some-actor' 
   "path" : "some-path",
   "operations" : [ ],
   "actor" : "some-actor",
-  "uuid" : "48faba92-5492-3e23-b262-75e30a7ddb6a"
+  "uuid" : "abcd1234-ab12-ab12-ab12-abcdef123456"
 }
 ```
 
