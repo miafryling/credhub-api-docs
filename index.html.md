@@ -41,7 +41,7 @@ More information on CredHub [can be found here.](https://github.com/cloudfoundry
 
 Credentials can be named with any value up to 255 characters containing alpha, numeric, underscore `_`, hyphen `-`, forward slash `/`, period `.`, colon `:`, parenthesis `(` `)`, and bracket `[` `]` characters. The character limit includes the leading slash, which will be prepended automatically if absent.
 
-Paths can be used to namespace a set of credential names for a different deployment or environment. To add a path to a credential, simply add the path prior to the credential name, separated by a forward slash (/), e.g. `credhub set -t password -n /prod/deploy123/cc_password -v 'value'`. If a leading slash is not provided, it will be automatically prepended.
+Paths can be used to namespace a set of credential names for a different deployment or environment. To add a path to a credential, simply add the path prior to the credential name, separated by a forward slash (/), e.g. `credhub set -t password -n /prod/deploy123/cc_password -w 'myPassword'`. If a leading slash is not provided, it will be automatically prepended.
 
 ## Credential IDs
 
